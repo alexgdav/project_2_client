@@ -1,1 +1,64 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Acme|Lato&display=swap');
+
+body,
+html {
+  height: 100%;
+}
+
+h1,
+h3,
+h5, {
+  font-family: 'Acme', sans-serif;
+  padding: 5px;
+}
+
+p,
+li {
+  font-family: 'Lato', sans-serif;
+}
+
+.centered-form,
+.terms {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.holder {
+  background: url("stars.jpg");
+  background-size: cover;
+  height: 100%;
+}
+
+.failure {
+  color: #C383AD;
+  font-family: 'Acme', sans-serif;
+  font-weight: bold;
+}
+
+.success {
+  color: #FFFFFF;
+  font-family: 'Acme', sans-serif;
+  font-weight: bold;
+}
+
+.logged-in {
+  display: none;
+}
+
+.main {
+  background: linear-gradient(rgba(250, 250, 250, .8), rgba(145, 152, 229, .5), rgba(250, 250, 250, .8));
+  background-size: cover;
+  height: 100%;
+  text-align: center;
+
+}
+
+.modal-body {
+  text-align: left;
+}
+
+#footer {
+  flex-shrink: none;
+
+}
