@@ -1,6 +1,7 @@
 #!/bin/bash
 
-curl "https://young-reef-92206.herokuapp.com/change-password" \
+# curl "https://young-reef-92206.herokuapp.com/change-password" \
+curl "http://localhost:4741/change-password"
   --include \
   --request PATCH \
   --header "Authorization: Token token=${TOKEN}" \

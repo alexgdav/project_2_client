@@ -57,11 +57,11 @@
     <hr>
     <hr>
     <div class="logged-out">
-      <!--modal-->
-        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#cya">
+      <!--cya modal-->
+  <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#cya">
         What's The Oracle? What do I do? What does this all mean?
-      </button>
-      <div class="modal fade" id="cya" tabindex="-1" role="dialog" aria-labelledby="cya_modal" aria-hidden="true">
+ </button>
+  <div class="modal fade" id="cya" tabindex="-1" role="dialog" aria-labelledby="cya_modal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -92,18 +92,45 @@
   </div>
 </div>
     </div>
-    <div class="logged-in">
-      <form class="form-inline centered-form">
-        <input class="form-control w-75" type="text" placeholder="Oracle, I have so many questions! I'll start with one.">
-        <button type="submit" class="btn btn-dark">Ask</button>
+    <div class="logged-in" id="question_form">
+      <form class="form-inline centered-form" id="question_create">
+        <input class="form-control w-75" required type="text" name="question[phrase]" id="q_input" placeholder="Oracle, I have a question!" >
+        <button class="btn btn-dark" type="submit">Ask</button>
       </form>
-
     </div>
+    <!--response modal button-->
+    <p></p>
+    <div id="get-answer" style="display: none">
+    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#oracle_response">
+       See Your Answer
+    </button>
+    </div>
+    <!--response modal-->
+<div class="modal fade" id="oracle_response" tabindex="-1" role="dialog" aria-labelledby="oracle_response_modal" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+    </div>
+    <div class="modal-body">
+      <div><h5>So you want to know:</h5></div>
+      <div id="oracle_question_body">
+     </div>
+     <div><h5>The Oracle Says:</h5></div>
+     <div id="oracle_response_body">
+    </div>
+    <div id="oracle_additional_body">
+   </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal" id="thanks_oracle">Thanks, I think</button>
+    </div>
+  </div>
+</div>
+</div>
   </div>
 </div>
 <footer id="footer" class="py-4 bg-dark text-white-50 fixed-bottom">
     <div class="container text-center">
-      <small>Copyright &copy; Your Website</small>
+      <small>credits and links go here etc &copy; </small>
     </div>
   </footer>
 </body>
