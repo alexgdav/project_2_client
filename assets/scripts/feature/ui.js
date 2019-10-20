@@ -37,6 +37,7 @@ const oracleAnswer = function () {
 const onAskSuccess = function (resData) {
   const currentQuestion = resData.question.phrase
   const currentQuestionId = resData.question.id
+  $('.featureEvs_messages').hide()
   $('.modal_header').show()
   $('#oracle_question_body').show().text(currentQuestion)
   $('#oracle_response_body').show().text(oracleAnswer)
@@ -50,12 +51,10 @@ const onAskSuccess = function (resData) {
   $('form').trigger('reset')
 }
 
-const failText = 'Well, that didn\'t work at all. Give it another shot, champ.'
+const failText = 'Well, that didn\'t work at all. Maybe give it another shot, champ.'
 
 const onAskFail = function () {
-  $('#authEvs_messages').text(failText)
-  $('#authEvs_messages').removeClass('success')
-  $('#authEvs_messages').addClass('failure')
+  $('.featureEvs_messages').show().text(failText)
   $('form').trigger('reset')
 }
 

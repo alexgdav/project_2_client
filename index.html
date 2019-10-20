@@ -32,120 +32,139 @@
       </div>
       <div class="logged-in">
         <h5 class="text-white h4">Change Password, or Leave the Oracle's Presence</h5>
-        <form id="sign-out">
-        <button class="btn btn-dark">sign out</button>
-      </form>
-        <form class="form-inline" id="change-pw">
-              <input type="password" name="passwords[old]" placeholder="enter current password" /><br>
-              <input type="password" name="passwords[new]" placeholder="enter new password" /><br>
-              <button class="btn btn-dark">change password</button><br>
+        <div>
+          <form class="form-inline" id="change-pw">
+            <input type="password" name="passwords[old]" placeholder="enter current password" /><br>
+            <input type="password" name="passwords[new]" placeholder="enter new password" /><br>
+            <button class="btn btn-dark">change password</button><br>
           </form>
-
+        </div>
+        <hr>
+        <div>
+          <form class="form" id="sign-out">
+            <button class="btn btn-danger">sign out</button>
+          </form>
+        </div>
+        <hr>
       </div>
       <div id='authEvs_messages'></div>
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
   </nav>
   <div class="holder">
-  <div class="main">
-    <h1>Ask the Oracle (if You Must, I Guess).</h1>
-    <hr>
-    <hr>
-    <hr>
-    <div class="logged-out">
-      <!--cya modal-->
-  <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#cya">
-        What's The Oracle? What do I do? What does this all mean?
- </button>
-  <div class="modal fade" id="cya" tabindex="-1" role="dialog" aria-labelledby="cya_modal" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="cya_modal">Do you have questions?</h3>
+    <div class="main">
+      <div class="heading"><h1>Ask the Oracle (if You Must, I Guess).</h1></div>
+      <hr>
+      <hr>
+      <hr>
+      <div class="logged-out">
+        <!--cya modal-->
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#cya">
+          What's The Oracle? What do I do? What does this all mean?
+        </button>
+        <div class="modal fade" id="cya" tabindex="-1" role="dialog" aria-labelledby="cya_modal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="cya_modal">Do you have questions?</h3>
 
-      </div>
-      <div class="modal-body">
-        <ul>
-          <li>Do you have many questions? Too many questions? Always with the questions?</li>
-          <li>Are you tired of hearing "I don't know"? "I can't see the future"? "Stop asking me"? "Please, leave"?</li>
-          <li>Do you have only one question, but it's a really, truly, massively super important one?</li>
-          <li>(Spoiler: they're always oh, so super important)</li>
-          <li>It just so happens that the Oracle will always listen. Always. No matter just how many questions you ask.</li>
-          <li>So, go ahead. Register. Log in. Ask your questions, and receive the clarity and judgment of the Oracle's wisdom.</li>
-       </ul>
-       <p class="small">Please note: clarity and judgment are subjective values. While most users feel judged when
-         querying the Oracle, your experience may vary. No guarantees are provided. Wisdom is relative.
-         Responses are for entertainment purposes only. The Oracle is not responsible for any actions taken by the user
-         after a response has been provided.</p>
+              </div>
+              <div class="modal-body">
+                <ul>
+                  <li>Do you have many questions? Too many questions? Always with the questions?</li>
+                  <li>Are you tired of hearing "I don't know"? "I can't see the future"? "Stop asking me"? "Please, leave"?</li>
+                  <li>Do you have only one question, but it's a really, truly, massively super important one?</li>
+                  <li>(Spoiler: they're always oh, so super important)</li>
+                  <li>It just so happens that the Oracle will always listen. Always. No matter just how many questions you ask.</li>
+                  <li>So, go ahead. Register. Log in. Ask your questions, and receive the clarity and judgment of the Oracle's wisdom.</li>
+                </ul>
+                <p class="small">Please note: clarity and judgment are subjective values. While most users feel judged when
+                  querying the Oracle, your experience may vary. No guarantees are provided. Wisdom is relative.
+                  Responses are for entertainment purposes only. The Oracle is not responsible for any actions taken by the user
+                  after a response has been provided.</p>
 
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">I understand</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">I understand</button>
+      <div class="logged-in" id="question_form">
+        <form class="form-inline centered-form" id="question_create">
+          <input class="form-control w-100" required type="text" name="question[phrase]" id="q_input" placeholder="Oracle, I have a question!">
+          <button class="btn btn-dark w-100" type="submit">Ask</button>
+        </form>
+        <form class="form-inline centered-form" id="question_show">
+          <input class="form-control w-100" required type="number" name="question[id]" id="id_input" placeholder="Remember a question ID? Well, look at you. Go ahead and enter it.">
+          <button class="btn btn-dark w-100" type="submit">Retrieve A Past Question</button>
+        </form>
+        <form class="form-inline centered-form" id="question_index">
+          <button class="btn btn-dark w-100" type="submit">See All Your Questions</button>
+        </form>
+      </div>
+      <!--response modal button-->
+      <p></p>
+      <div id="get-answer" style="display: none">
+        <button type="button" class="btn btn-dark w-50" data-toggle="modal" data-target="#oracle_response">
+          See Your Answer
+        </button>
+      </div>
+      <!--response modal-->
+      <div class="modal fade" id="oracle_response" tabindex="-1" role="dialog" aria-labelledby="oracle_response_modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body">
+              <div class="modal_header">
+                <h5>So you want to know:</h5>
+              </div>
+              <div id="oracle_question_body">
+              </div>
+              <div class="modal_header">
+                <h5>The Oracle Says:</h5>
+              </div>
+              <div id="oracle_response_body">
+              </div>
+              <hr>
+              <div id="oracle_additional_body">
+              </div>
+              <hr>
+              <div id="oracle_edit_body">
+                <form class="form-inline w-100" id="q_edit">
+                  <input class="form-control w-100" type="hidden" name="question[id]" value="" id="q_edit_id">
+                  <input class="form-control w-100" required type="text" name="question[phrase]" id="q_edit_phrase">
+                  <button class="btn btn-dark w-100" type="submit">Edit Question</button>
+                </form>
+                <hr>
+                <form class="form-inline w-100" id="q_delete">
+                  <input type="hidden" class="form-control w-100" name="question[id]" value="" id="q_delete_id">
+                  <button type="submit" class="btn btn-secondary w-100">Un-Ask Question</button>
+                </form>
+                <p></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="thanks_oracle">Thanks, I think</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="logged-in w-100">
+        <h3 class=featureEvs_messages></h3>
       </div>
     </div>
-  </div>
-</div>
-    </div>
-    <div class="logged-in" id="question_form">
-      <form class="form-inline centered-form" id="question_create">
-        <input class="form-control w-75" required type="text" name="question[phrase]" id="q_input" placeholder="Oracle, I have a question!" >
-        <button class="btn btn-dark" type="submit">Ask</button>
-      </form>
-    </div>
-    <!--response modal button-->
-    <p></p>
-    <div id="get-answer" style="display: none">
-    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#oracle_response">
-       See Your Answer
-    </button>
-    </div>
-    <!--response modal-->
-<div class="modal fade" id="oracle_response" tabindex="-1" role="dialog" aria-labelledby="oracle_response_modal" aria-hidden="true">
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-    </div>
-    <div class="modal-body">
-      <div class="modal_header"><h5>So you want to know:</h5></div>
-      <div id="oracle_question_body">
-     </div>
-     <div class="modal_header"><h5>The Oracle Says:</h5></div>
-     <div id="oracle_response_body">
-    </div>
-    <hr>
-    <div id="oracle_additional_body">
-   </div>
-   <hr>
-   <div id="oracle_edit_body">
-     <form class="form-inline w-100" id="q_edit">
-       <input class="form-control w-100" required type="number" name="question[id]" value="" id="q_edit_id">
-       <input class="form-control w-100" required type="text" name="question[phrase]" id="q_edit_phrase">
-       <button class="btn btn-dark w-100" type="submit">Re-Ask</button>
-     </form>
-     <hr>
-     <form class ="form-inline w-100" id="q_delete">
-       <input class="form-control w-100" required type="number" name="question[id]" value="" id="q_delete_id">
-      <button type="submit" class="btn btn-secondary w-100">Un-Ask</button>
-    </form>
-         <p></p>
-   </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal" id="thanks_oracle">Thanks, I think</button>
-    </div>
-  </div>
-</div>
-</div>
-  </div>
-</div>
-<footer id="footer" class="py-4 bg-dark text-white-50 fixed-bottom">
-    <div class="container text-center">
-      <small>credits and links go here etc &copy; </small>
-    </div>
-  </footer>
+    <footer id="footer" class="py-4 bg-dark text-white-50 fixed-bottom">
+      <div class="container text-center">
+        <small>credits and links go here etc &copy; </small>
+      </div>
+    </footer>
 </body>
 
 </html>
