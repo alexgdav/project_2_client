@@ -14,7 +14,7 @@ const createQuestion = function (formData) {
   })
 }
 
-const getAllQuestions = function () {
+const getAllQuestions = function () { // currently not using this one
   return $.ajax({
     url: config.apiUrl + '/questions',
     headers: {
@@ -24,7 +24,17 @@ const getAllQuestions = function () {
   })
 }
 
-const getCurrentQuestion = function (formData) {
+const deleteQuestion = function (formData) {
+  return $.ajax({
+    url: config.apiUrl + '/questions/' + formData.question.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    method: 'DELETE'
+  })
+}
+
+const getCurrentQuestion = function (formData) { // currently not using this one
   return $.ajax({
     url: config.apiUrl + '/questions/' + formData.question.id,
     headers: {
@@ -36,6 +46,7 @@ const getCurrentQuestion = function (formData) {
 
 module.exports = {
   createQuestion,
+  deleteQuestion,
   getAllQuestions,
   getCurrentQuestion
 }

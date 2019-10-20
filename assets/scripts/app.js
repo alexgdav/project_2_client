@@ -15,4 +15,5 @@ $(() => {
   $('#change-pw').on('submit', authEvs.onChangePw)
   $('#question_create').on('submit', featureEvs.onAsk)
   $('#thanks_oracle').on('click', featureUi.onThanksSuccess)
+  $('#q_delete').on('submit', featureEvs.onUnask)
 })

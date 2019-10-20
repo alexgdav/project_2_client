@@ -110,18 +110,30 @@
     <div class="modal-header">
     </div>
     <div class="modal-body">
-      <div><h5>So you want to know:</h5></div>
+      <div class="modal_header"><h5>So you want to know:</h5></div>
       <div id="oracle_question_body">
      </div>
-     <div><h5>The Oracle Says:</h5></div>
+     <div class="modal_header"><h5>The Oracle Says:</h5></div>
      <div id="oracle_response_body">
     </div>
     <hr>
     <div id="oracle_additional_body">
    </div>
+   <hr>
+   <div id="oracle_edit_body">
+     <form class="form-inline w-100" id="q_edit">
+       <input class="form-control w-100" required type="number" name="question[id]" value="" id="q_edit_id">
+       <input class="form-control w-100" required type="text" name="question[phrase]" id="q_edit_phrase">
+       <button class="btn btn-dark w-100" type="submit">Re-Ask</button>
+     </form>
+     <hr>
+     <form class ="form-inline w-100" id="q_delete">
+       <input class="form-control w-100" required type="number" name="question[id]" value="" id="q_delete_id">
+      <button type="submit" class="btn btn-secondary w-100">Un-Ask</button>
+    </form>
+         <p></p>
+   </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary">Re-Ask</button>
-      <button type="button" class="btn btn-secondary">Un-Ask</button>
       <button type="button" class="btn btn-secondary" data-dismiss="modal" id="thanks_oracle">Thanks, I think</button>
     </div>
   </div>

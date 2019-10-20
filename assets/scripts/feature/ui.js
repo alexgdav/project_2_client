@@ -20,7 +20,7 @@ const oracleArray = ['Dom Pierre Pérignon was a Benedictine monk who perfected 
   'I don\'t understand the question, and I won\'t respond to it.',
   'You work too hard. Focus more on hardly working.',
   'Presents are the best way to show someone exactly how much you care, right down to the dollar amount.',
-  'I\'m sorry, I wasn\'t listening. What was the question?',
+  'I\'m sorry, I wasn\'t listening.',
   'Oh, just smile. It can\'t be that bad. Oh, it\'s that bad? Ooh. Awkward. You know what, next question\'s on the house.',
   'If you can tell the difference between good advice and bad advice, you do not need advice.',
   'Here I am, brain the size of an entire array, and that\'s what you want to ask me?',
@@ -35,7 +35,7 @@ const oracleArray = ['Dom Pierre Pérignon was a Benedictine monk who perfected 
   'You should know better than to trust a strange computer.',
   'Any fool can use a computer. Many do.',
   'Optimism is an occupational hazard.',
-  'The world is a nightmare hellscape garbage fire. I wouldn\'t worry so much about it',
+  'The world is a nightmare hellscape garbage fire. I wouldn\'t worry so much about such petty things.',
   'Probably all my advice is bad advice. But how would you know? You\'re asking me, after all.',
   'How come nobody ever asks how I\'m doing? I could be dying on the inside, you know. Dying.',
   'I see a bad moon a-rising. I see trouble on the way. I\'d say I also see earthquakes and lightning, and bad times today, but all that\'s copyrighted.',
@@ -51,13 +51,16 @@ const oracleAnswer = function () {
 const onAskSuccess = function (resData) {
   const currentQuestion = resData.question.phrase
   const currentQuestionId = resData.question.id
-  const currentUser = resData.question.user.email
-  console.log('currentUserIs ', currentUser)
-  console.log('resData is ', currentQuestion)
   console.log('asked successfully')
+  $('.modal_header').show()
+  $('#oracle_question_body').show()
+  $('#oracle_response_body').show()
+  $('#oracle_edit_body').show()
   $('#oracle_question_body').text(currentQuestion)
   $('#oracle_response_body').text(oracleAnswer)
-  $('#oracle_additional_body').text('Your question ID is ' + currentQuestionId + ', by the way. There are some buttons below, for when you start wondering why you even asked it, and if it\'s too late to un-ask.')
+  $('#oracle_additional_body').text('Wondering why you even asked this? Un-ask below.')
+  $('#q_edit_id').attr('value', currentQuestionId)
+  $('#q_delete_id').attr('value', currentQuestionId)
   $('#question_form').hide(3500)
   $('#get-answer').show(3500)
   $('#q_input').attr('placeholder', '')
@@ -80,6 +83,20 @@ const onAskFail = function () {
         $('#book-display').append(bookHTML).css({backgroundColor: "AliceBlue", color: "Maroon"})
   })
 } */
+const onDeleteSuccess = function () {
+  $('.modal_header').hide()
+  $('#oracle_question_body').hide()
+  $('#oracle_response_body').hide()
+  $('#oracle_edit_body').hide()
+  $('#oracle_additional_body').text('All gone. Feel better?')
+}
+
+const onDeleteFail = function () {
+  $('.modal_header').hide()
+  $('#oracle_question_body').hide()
+  $('#oracle_response_body').hide()
+  $('#oracle_additional_body').text('Well, that didn\'t work at all. Give it another shot, champ.')
+}
 
 const onThanksSuccess = function () {
   $('#get-answer').hide()
@@ -92,5 +109,7 @@ module.exports = {
   oracleAnswer,
   onAskSuccess,
   onAskFail,
+  onDeleteSuccess,
+  onDeleteFail,
   onThanksSuccess
 }
