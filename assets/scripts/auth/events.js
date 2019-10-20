@@ -4,11 +4,11 @@ const ui = require('./ui.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
+  const formData = getFormFields(event.target)
   api.signUp(formData)
-    .then(ui.onSignUpSuccess)
-    .catch(ui.onSignUpFail)
+    .then(() => api.signIn(formData))
+    .then(ui.onSignInSuccess)
+    .catch(ui.onFail)
 }
 
 const onSignIn = function (event) {
@@ -17,14 +17,14 @@ const onSignIn = function (event) {
   const formData = getFormFields(form)
   api.signIn(formData)
     .then(ui.onSignInSuccess)
-    .catch(ui.onSignInFail)
+    .catch(ui.onFail)
 }
 
 const onSignOut = function (event) {
   event.preventDefault()
   api.signOut()
     .then(ui.onSignOutSuccess)
-    .catch(ui.onSignOutFail)
+    .catch(ui.onFail)
 }
 
 const onChangePw = function (event) {
@@ -33,7 +33,7 @@ const onChangePw = function (event) {
   const formData = getFormFields(form)
   api.changePw(formData)
     .then(ui.onChangePwSuccess)
-    .catch(ui.onChangePwFail)
+    .catch(ui.onFail)
 }
 
 module.exports = {

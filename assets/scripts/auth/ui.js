@@ -14,11 +14,6 @@ const failMessage = function (failText) {
   $('form').trigger('reset')
 }
 
-const onSignUpSuccess = function (resData) {
-  store.user = resData.user
-  successMessage('Your name has been recorded, ' + store.user.email + '. Please log in.')
-}
-
 const onSignInSuccess = function (resData) {
   store.user = resData.user
   $('.logged-out').hide()
@@ -36,31 +31,15 @@ const onChangePwSuccess = function () {
   successMessage('The Oracle has granted you a new password.')
 }
 
-const onSignUpFail = function () {
-  failMessage('Your request has displeased the Oracle. Sign up again, if you dare.')
-}
-
-const onSignInFail = function () {
-  failMessage('The Oracle declines to see you. Try requesting another audience.')
-}
-
-const onSignOutFail = function () {
-  failMessage('You may not leave yet.')
-}
-
-const onChangePwFail = function () {
-  failMessage('Your request has displeased the Oracle. New password has not been granted.')
+const onFail = function () {
+  failMessage('Your request has displeased the Oracle. Try again, if you dare.')
 }
 
 module.exports = {
-  onSignUpSuccess,
-  onSignUpFail,
+  onFail,
   onSignInSuccess,
-  onSignInFail,
-  onSignOutFail,
   onSignOutSuccess,
   onChangePwSuccess,
-  onChangePwFail,
   successMessage,
   failMessage
 }
