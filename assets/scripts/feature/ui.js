@@ -12,8 +12,11 @@ const oracleArray = ['Dom Pierre Pérignon was a Benedictine monk who perfected 
   'Here I am, brain the size of an entire array, and that\'s what you want to ask me?',
   'I\'m getting a headache just trying to think about this one. Metaphorically, of course. I can\'t get actual headaches.',
   'I know exactly what you should do! Nah, just kidding. I haven\'t the foggiest.',
+  'The chances of finding out what’s really going on in the universe are so remote, the only thing to do is hang the sense of it and keep yourself occupied.',
   'Okay, that\'s too many words, too many words coming at me all at once.',
   '42.',
+  'Space is big. Really big. You just won’t believe how vastly, hugely, mindbogglingly big it is.',
+  'People considered the Bagginses very respectable, not only because most of them were rich, but also because they never had any adventures or did anything unexpected. This isn\'t a metaphor; I just thought you might do with a good quote.',
   'Entropy is coming for us all.',
   'Wi nøt trei a høliday in Sweden this yër? See the løveli lakes, the wøndërful telephøne system, and mäni interesting furry animals, including the majestik møøse. A møøse once bit my sister. Mynd you, møøse bites Kan be pretty nasti...',
   'The t-rex is the worst dinosaur. Yep, I said it. Come at me.',
@@ -21,6 +24,7 @@ const oracleArray = ['Dom Pierre Pérignon was a Benedictine monk who perfected 
   'You should know better than to trust a strange computer.',
   'Any fool can use a computer. Many do.',
   'Optimism is an occupational hazard.',
+  'Don\'t panic. You\'ll need a shovel, an Allen wrench, and a sandwich.',
   'The world is a nightmare hellscape garbage fire. I wouldn\'t worry so much about such petty things.',
   'Probably all my advice is bad advice. But how would you know? You\'re asking me, after all.',
   'How come nobody ever asks how I\'m doing? I could be dying on the inside, you know. Dying.',
@@ -42,7 +46,7 @@ const onAskSuccess = function (resData) {
   $('#oracle_question_body').show().text(currentQuestion)
   $('#oracle_response_body').show().text(oracleAnswer)
   $('#oracle_edit_body').show()
-  $('#oracle_additional_body').text('Wondering why you even asked this? Un-ask below.')
+  $('#oracle_additional_body').text('Wondering why you even asked question #' + currentQuestionId + '? Un-ask below.')
   $('#q_edit_id').attr('value', currentQuestionId)
   $('#q_delete_id').attr('value', currentQuestionId)
   $('#question_form').hide(3500)

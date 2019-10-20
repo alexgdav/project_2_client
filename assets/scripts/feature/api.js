@@ -3,7 +3,6 @@ const config = require('../config.js')
 const store = require('../store.js')
 
 const createQuestion = function (formData) {
-  // console.log(store.user.token)
   return $.ajax({
     url: config.apiUrl + '/questions',
     headers: {
