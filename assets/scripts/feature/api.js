@@ -34,7 +34,18 @@ const deleteQuestion = function (formData) {
   })
 }
 
-const getCurrentQuestion = function (formData) { // currently not using this one
+const editQuestion = function (formData) {
+  return $.ajax({
+    url: config.apiUrl + '/questions/' + formData.question.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    method: 'PATCH',
+    data: formData
+  })
+}
+
+const getOneQuestion = function (formData) { // currently not using this one
   return $.ajax({
     url: config.apiUrl + '/questions/' + formData.question.id,
     headers: {
@@ -47,6 +58,7 @@ const getCurrentQuestion = function (formData) { // currently not using this one
 module.exports = {
   createQuestion,
   deleteQuestion,
+  editQuestion,
   getAllQuestions,
-  getCurrentQuestion
+  getOneQuestion
 }

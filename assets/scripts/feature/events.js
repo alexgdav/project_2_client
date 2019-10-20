@@ -2,7 +2,7 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
-const onAsk = function (event) {
+const onAsk = event => {
   event.preventDefault()
   const formData = getFormFields(event.target)
   api.createQuestion(formData)
@@ -10,15 +10,24 @@ const onAsk = function (event) {
     .catch(ui.onAskFail)
 }
 
-const onUnask = function (event) {
+const onUnask = event => {
   event.preventDefault()
   const formData = getFormFields(event.target)
   api.deleteQuestion(formData)
     .then(ui.onDeleteSuccess)
-    .catch(ui.onDeleteFail)
+    .catch(ui.onDeleteAndEditFail)
+}
+
+const onEdit = event => {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+  api.editQuestion(formData)
+    .then(ui.onEditSuccess)
+    .catch(ui.onDeleteAndEditFail)
 }
 
 module.exports = {
   onAsk,
-  onUnask
+  onUnask,
+  onEdit
 }

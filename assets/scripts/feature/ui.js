@@ -1,18 +1,4 @@
-/* const store = require('../store.js')
-
-  const successMessage = function (successText) {
-    $('#featEvs_messages').text(successText)
-    $('#featEvs_messages').removeClass('failure')
-    $('#featEvs_messages').addClass('success')
-    $('form').trigger('reset')
-  }
-
-  const failMessage = function (failText) {
-    $('#featEvs_messages').text(failText)
-    $('#featEvs_messages').removeClass('success')
-    $('#featEvs_messages').addClass('failure')
-    $('form').trigger('reset')
-} */
+/* const store = require('../store.js') */
 
 const oracleArray = ['Dom Pierre Pérignon was a Benedictine monk who perfected the process of making champagne. What does that have to do with your question? Tut tut, that would be a second question, and you only get one at a time.',
   'Would that The Sea of Tranquility were not on the moon. Alas. It\'ll be a long voyage.',
@@ -51,13 +37,10 @@ const oracleAnswer = function () {
 const onAskSuccess = function (resData) {
   const currentQuestion = resData.question.phrase
   const currentQuestionId = resData.question.id
-  console.log('asked successfully')
   $('.modal_header').show()
-  $('#oracle_question_body').show()
-  $('#oracle_response_body').show()
+  $('#oracle_question_body').show().text(currentQuestion)
+  $('#oracle_response_body').show().text(oracleAnswer)
   $('#oracle_edit_body').show()
-  $('#oracle_question_body').text(currentQuestion)
-  $('#oracle_response_body').text(oracleAnswer)
   $('#oracle_additional_body').text('Wondering why you even asked this? Un-ask below.')
   $('#q_edit_id').attr('value', currentQuestionId)
   $('#q_delete_id').attr('value', currentQuestionId)
@@ -67,9 +50,15 @@ const onAskSuccess = function (resData) {
   $('form').trigger('reset')
 }
 
+const failText = 'Well, that didn\'t work at all. Give it another shot, champ.'
+
 const onAskFail = function () {
-  console.log('failed, ask again')
+  $('#authEvs_messages').text(failText)
+  $('#authEvs_messages').removeClass('success')
+  $('#authEvs_messages').addClass('failure')
+  $('form').trigger('reset')
 }
+
 /*  const seeAllQuestions = function (response) {
       console.log(response)
       $('#book-display').html(' ')
@@ -91,11 +80,20 @@ const onDeleteSuccess = function () {
   $('#oracle_additional_body').text('All gone. Feel better?')
 }
 
-const onDeleteFail = function () {
+const onDeleteAndEditFail = function () {
   $('.modal_header').hide()
   $('#oracle_question_body').hide()
   $('#oracle_response_body').hide()
-  $('#oracle_additional_body').text('Well, that didn\'t work at all. Give it another shot, champ.')
+  $('#oracle_additional_body').text(failText)
+}
+
+const onEditSuccess = function (resData) {
+  const currentQuestion = resData.question.phrase
+  $('.modal_header').show()
+  $('#oracle_question_body').show().text(currentQuestion)
+  $('#oracle_response_body').show().text('You expected a new response? Hah. Good one!')
+  $('#oracle_additional_body').text('You could try editing again, I guess. Hey, it\'s your time.')
+  $('#q_edit_phrase').text('')
 }
 
 const onThanksSuccess = function () {
@@ -110,6 +108,7 @@ module.exports = {
   onAskSuccess,
   onAskFail,
   onDeleteSuccess,
-  onDeleteFail,
+  onDeleteAndEditFail,
+  onEditSuccess,
   onThanksSuccess
 }
