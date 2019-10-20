@@ -13,8 +13,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
+  const formData = getFormFields(event.target)
   api.signIn(formData)
     .then(ui.onSignInSuccess)
     .catch(ui.onFail)
@@ -29,8 +28,7 @@ const onSignOut = function (event) {
 
 const onChangePw = function (event) {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
+  const formData = getFormFields(event.target)
   api.changePw(formData)
     .then(ui.onChangePwSuccess)
     .catch(ui.onFail)
