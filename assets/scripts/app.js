@@ -22,4 +22,5 @@ $(() => {
   $('.all-questions-content').on('click', '.all-questions-delete-button', featureEvs.onUnaskAll)
   $('#clear-all-questions-content').on('click', featureUi.onClearAllQContent)
   $('#reload-all-questions-content').on('click', featureEvs.onIndex)
+  $('#question_show').on('submit', featureEvs.onShow)
 })

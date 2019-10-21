@@ -37,6 +37,16 @@ const onIndex = event => {
     .catch(ui.onAskAndIndexFail)
 }
 
+const onShow = event => {
+  event.preventDefault()
+  const fullFormData = getFormFields(event.target)
+  const formData = fullFormData.question.id
+  console.log('formData is', formData)
+  api.showQuestion(formData)
+    .then(ui.onShowSuccess)
+    .catch(ui.onShowFail)
+}
+
 const onEditAll = event => {
   event.preventDefault()
   const id = $(event.target).data('id')
@@ -72,6 +82,7 @@ module.exports = {
   onEdit,
   onIndex,
   onEditAll,
-  onUnaskAll
+  onUnaskAll,
+  onShow
 
 }

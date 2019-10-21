@@ -106,10 +106,6 @@
           <button class="btn btn-dark w-100" type="submit">See All Your Questions</button>
         </form>
 
-      <!--  <form class="form-inline centered-form" id="question_show">
-          <input class="form-control w-100" required type="number" name="question[id]" id="id_input" placeholder="Remember a question ID? Well, look at you. Go ahead and enter it.">
-          <button class="btn btn-dark w-100" type="submit">Retrieve A Past Question</button>
-        </form> -->
 
 <!-- All Questions Modal -->
       <div class="modal fade" id="allQuestionsModal" tabindex="-1" role="dialog" aria-labelledby="all-questions-modal-title" aria-hidden="true">
@@ -126,11 +122,18 @@
                 <hr>
                 <div class="all-questions-options">
                   <p>
-                <button type="button" class="btn btn-dark w-100" id="clear-all-questions-content">Clear Questions Display</button>
+                <button type="button" class="btn btn-outline-danger w-100" id="clear-all-questions-content">Clear Questions Display</button>
                </p>
                <p>
-                 <button type="button" class="btn btn-dark w-100" id="reload-all-questions-content">Reload Questions Display</button>
+                 <button type="button" class="btn btn-outline-danger w-100" id="reload-all-questions-content">Reload All Questions</button>
               </p>
+              <p> <form class="form-inline w-100" id="question_show">
+                  <input class="form-control w-100" required type="number" name="question[id]" id="id_input" placeholder="You remembered a question ID? Good for you.">
+                  <button class="btn btn-outline-danger w-100" type="submit">Retrieve A Past Question</button>
+                </form>
+              </p>
+              <hr>
+              <hr>
                </div>
                 <div class="all-questions-content"></div>
               </div>
@@ -195,7 +198,7 @@
     </div>
     <footer id="footer" class="py-4 bg-dark text-white-50 fixed-bottom">
       <div class="container text-center">
-        <small>credits and links go here etc &copy; </small>
+        <small>by Alex Davidenko | <a href="https://github.com/alexgdav/project_2_client">GitHub</a> </small>
       </div>
     </footer>
 </body>

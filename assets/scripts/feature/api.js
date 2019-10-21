@@ -44,9 +44,9 @@ const indexQuestions = function () {
   })
 }
 
-const getOneQuestion = function (formData) { // currently not using this one
+const showQuestion = function (formData) {
   return $.ajax({
-    url: config.apiUrl + '/questions/' + formData.question.id,
+    url: config.apiUrl + '/questions/' + formData,
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
@@ -58,6 +58,6 @@ module.exports = {
   createQuestion,
   deleteQuestion,
   editQuestion,
-  getOneQuestion,
+  showQuestion,
   indexQuestions
 }

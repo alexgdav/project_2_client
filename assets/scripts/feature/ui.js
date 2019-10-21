@@ -126,6 +126,18 @@ const onClearAllQContent = function (event) {
   $('.all-questions-content').html('')
 }
 
+const onShowSuccess = function (responseData) {
+  $('form').trigger('reset')
+  $('.all-questions-content').html('')
+  $('.all-questions-content').text('Question ' + responseData.question.id + ' was ' + responseData.question.phrase + '. What a GREAT question.')
+}
+
+const onShowFail = function () {
+  $('form').trigger('reset')
+  $('.all-questions-content').html('')
+  $('.all-questions-content').text(failText)
+}
+
 module.exports = {
   oracleArray,
   oracleAnswer,
@@ -140,5 +152,7 @@ module.exports = {
   onEditAllFail,
   onDeleteAllSuccess,
   onDeleteAllFail,
-  onClearAllQContent
+  onClearAllQContent,
+  onShowSuccess,
+  onShowFail
 }
