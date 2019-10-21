@@ -1,5 +1,7 @@
 /* const store = require('../store.js') */
 
+const indexQuestionsTemplate = require('../templates/question-index.handlebars')
+
 const oracleArray = ['Dom Pierre Pérignon was a Benedictine monk who perfected the process of making champagne. What does that have to do with your question? Tut tut, that would be a second question, and you only get one at a time.',
   'Would that The Sea of Tranquility were not on the moon. Alas. It\'ll be a long voyage.',
   'The antonym of the word synonym is antonym itself, of course. I\'ve always found that unsettling.',
@@ -57,24 +59,20 @@ const onAskSuccess = function (resData) {
 
 const failText = 'Well, that didn\'t work at all. Maybe give it another shot, champ.'
 
-const onAskFail = function () {
+const onAskAndIndexFail = function () {
   $('.featureEvs_messages').show().text(failText)
   $('form').trigger('reset')
 }
 
-/*  const seeAllQuestions = function (response) {
-      console.log(response)
-      $('#book-display').html(' ')
-      response.books.forEach(book => {
-        const bookHTML = (`
-         <h4>Title: ${book.title}</h4>
-         <p>Author: ${book.author}</p>
-         <p>ID: ${book.id}</p>
-         <br>
-          `)
-        $('#book-display').append(bookHTML).css({backgroundColor: "AliceBlue", color: "Maroon"})
-  })
-} */
+const onIndexQuestionsSuccess = function (response) {
+  console.log(response)
+  const howManyQuestions = response.questions.length
+  $('#allQuestionsModal').modal('show')
+  $('.all-questions-count').text('You have asked ' + howManyQuestions + ' questions. Uh, great job!')
+  const indexQuestionsHTML = indexQuestionsTemplate({ questions: response.questions })
+  $('.all-questions-content').html(indexQuestionsHTML)
+}
+
 const onDeleteSuccess = function () {
   $('.modal_header').hide()
   $('#oracle_question_body').hide()
@@ -109,9 +107,10 @@ module.exports = {
   oracleArray,
   oracleAnswer,
   onAskSuccess,
-  onAskFail,
+  onAskAndIndexFail,
   onDeleteSuccess,
   onDeleteAndEditFail,
   onEditSuccess,
-  onThanksSuccess
+  onThanksSuccess,
+  onIndexQuestionsSuccess
 }

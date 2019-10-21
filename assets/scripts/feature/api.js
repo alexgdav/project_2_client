@@ -44,6 +44,16 @@ const editQuestion = function (formData) {
   })
 }
 
+const indexQuestions = function () {
+  return $.ajax({
+    url: config.apiUrl + '/questions/',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    method: 'GET'
+  })
+}
+
 const getOneQuestion = function (formData) { // currently not using this one
   return $.ajax({
     url: config.apiUrl + '/questions/' + formData.question.id,
@@ -59,5 +69,6 @@ module.exports = {
   deleteQuestion,
   editQuestion,
   getAllQuestions,
-  getOneQuestion
+  getOneQuestion,
+  indexQuestions
 }

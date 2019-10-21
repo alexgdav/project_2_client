@@ -1,0 +1,21 @@
+{{#each questions as |question|}}
+  <section data-id="{{question.id}}" class="col border col-auto">
+    <p>Question ID: {{question.id}}</p>
+    <p>You have asked:
+      {{#if question.phrase}}
+        {{question.phrase}}
+      {{else}}
+        Uh, you didn't ask anything.
+      {{/if}}
+    </p>
+    <p>
+      <form class="all-questions-edit" data-id="{{question.id}}">
+          <input type="text" placeholder="Changed Wording Here" name="question[phrase]" class="form-control" required>
+          <button class="btn btn-block btn-dark all-questions-edit-button">Rephrase Your Question</button>
+        </form>
+      </p>
+    <p>
+    <button data-id="{{question.id}}" class="btn btn-block btn-dark all-questions-delete-button">Un-Ask It</button>
+    </p>
+      </section>
+{{/each}}

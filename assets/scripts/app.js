@@ -17,4 +17,7 @@ $(() => {
   $('#thanks_oracle').on('click', featureUi.onThanksSuccess)
   $('#q_delete').on('submit', featureEvs.onUnask)
   $('#q_edit').on('submit', featureEvs.onEdit)
+  $('#q_index').on('submit', featureEvs.onIndex)
+  $('.all-questions-content').on('submit', '.all-questions-edit', featureEvs.onEditAll)
+  $('.all-questions-content').on('click', '.all-questions-delete-button', featureEvs.onUnaskAll)
 })

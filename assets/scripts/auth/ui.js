@@ -25,16 +25,17 @@ const onSignOutSuccess = function () {
   $('.logged-out').show()
   $('.logged-in').hide()
   successMessage('All questioned out? Farewell.')
-  setTimeout(function () {
-    successMessage('')
-  }, 3500)
+  $('#q_input').attr('placeholder', 'Oracle, I have a question!')
+//  setTimeout(function () {
+//    successMessage('')
+//  }, 3500)
 }
 
 const onChangePwSuccess = function () {
   successMessage('The Oracle has granted you a new password.')
-  setTimeout(function () {
-    successMessage('Ask your question, ' + store.user.email)
-  }, 3500)
+//  setTimeout(function () {
+//    successMessage('Ask your question, ' + store.user.email)
+//  }, 3500)
 }
 
 const onFail = function () {
