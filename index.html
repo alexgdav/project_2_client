@@ -124,6 +124,14 @@
               <div class="modal-body">
                 <div class="all-questions-count"></div>
                 <hr>
+                <div class="all-questions-options">
+                  <p>
+                <button type="button" class="btn btn-dark w-100" id="clear-all-questions-content">Clear Questions Display</button>
+               </p>
+               <p>
+                 <button type="button" class="btn btn-dark w-100" id="reload-all-questions-content">Reload Questions Display</button>
+              </p>
+               </div>
                 <div class="all-questions-content"></div>
               </div>
               <div class="modal-footer">
@@ -164,7 +172,7 @@
               <div id="oracle_edit_body">
                 <form class="form-inline w-100" id="q_edit">
                   <input class="form-control w-100" type="hidden" name="question[id]" value="" id="q_edit_id">
-                  <input class="form-control w-100" required type="text" name="question[phrase]" id="q_edit_phrase">
+                  <input class="form-control w-100" required type="text" name="question[phrase]" id="q_edit_phrase" placeholder="Changed Wording Here">
                   <button class="btn btn-dark w-100" type="submit">Edit Question</button>
                 </form>
                 <hr>

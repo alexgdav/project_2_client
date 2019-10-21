@@ -12,8 +12,10 @@ const onAsk = event => {
 
 const onUnask = event => {
   event.preventDefault()
-  const formData = getFormFields(event.target)
-  console.log(formData)
+  const fullFormData = getFormFields(event.target)
+  console.log('full form Data is', fullFormData)
+  const formData = fullFormData.question.id
+  console.log('form Data is', formData)
   api.deleteQuestion(formData)
     .then(ui.onDeleteSuccess)
     .catch(ui.onDeleteAndEditFail)
@@ -22,6 +24,7 @@ const onUnask = event => {
 const onEdit = event => {
   event.preventDefault()
   const formData = getFormFields(event.target)
+  console.log(formData)
   api.editQuestion(formData)
     .then(ui.onEditSuccess)
     .catch(ui.onDeleteAndEditFail)
@@ -37,29 +40,30 @@ const onIndex = event => {
 const onEditAll = event => {
   event.preventDefault()
   const id = $(event.target).data('id')
-  console.log(id)
+  console.log('id is', id)
   const formData = getFormFields(event.target)
-  console.log(formData)
-/*  api.editQuestion(formData, id)
+  console.log('before', formData)
+  formData.question.id = id
+  console.log(formData.question.id)
+  console.log('after', formData)
+  api.editQuestion(formData)
     .then(function () {
       onIndex(event)
     })
-    .then(console.log('edited from all q'))
-    .catch(console.log('edited from all q failed')) */
+    .then(ui.onEditAllSuccess)
+    .catch(ui.onEditAllFail)
 }
 
 const onUnaskAll = event => {
   event.preventDefault()
   const id = $(event.target).data('id')
-  console.log(id)
-  console.log('unasked from all q modal')
-  /*const formData = getFormFields(event.target)
-  api.updateThought(formData, id)
+  console.log('id is', id)
+  api.deleteQuestion(id)
     .then(function () {
       onIndex(event)
     })
-    .then(console.log('edited from all q'))
-    .catch(console.log('edited from all q failed'))*/
+    .then(ui.onDeleteAllSuccess)
+    .catch(ui.onDeleteAllFail)
 }
 
 module.exports = {

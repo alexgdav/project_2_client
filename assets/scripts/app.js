@@ -20,4 +20,6 @@ $(() => {
   $('#q_index').on('submit', featureEvs.onIndex)
   $('.all-questions-content').on('submit', '.all-questions-edit', featureEvs.onEditAll)
   $('.all-questions-content').on('click', '.all-questions-delete-button', featureEvs.onUnaskAll)
+  $('#clear-all-questions-content').on('click', featureUi.onClearAllQContent)
+  $('#reload-all-questions-content').on('click', featureEvs.onIndex)
 })

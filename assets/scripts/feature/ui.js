@@ -65,11 +65,13 @@ const onAskAndIndexFail = function () {
 }
 
 const onIndexQuestionsSuccess = function (response) {
-  console.log(response)
   const howManyQuestions = response.questions.length
   $('#allQuestionsModal').modal('show')
   $('.all-questions-count').text('You have asked ' + howManyQuestions + ' questions. Uh, great job!')
-  const indexQuestionsHTML = indexQuestionsTemplate({ questions: response.questions })
+  const sortedQuestions = response.questions.sort((a, b) => {
+    return a.id - b.id
+  })
+  const indexQuestionsHTML = indexQuestionsTemplate({ questions: sortedQuestions })
   $('.all-questions-content').html(indexQuestionsHTML)
 }
 
@@ -94,13 +96,34 @@ const onEditSuccess = function (resData) {
   $('#oracle_question_body').show().text(currentQuestion)
   $('#oracle_response_body').show().text('You expected a new response? Hah. Good one!')
   $('#oracle_additional_body').text('You could try editing again, I guess. Hey, it\'s your time.')
-  $('#q_edit_phrase').text('')
+  $('form').trigger('reset')
+//  $('#q_edit_phrase').attr('placeholder', 'Changed Wording Here')
 }
 
 const onThanksSuccess = function () {
   $('#get-answer').hide()
   $('#question_form').show()
   $('#q_input').attr('placeholder', 'oRaCLe i HAvE A quEsTIoN')
+}
+
+const onEditAllSuccess = function () {
+  console.log('edit from all q modal success')
+}
+
+const onEditAllFail = function () {
+  console.log('edit from all q modal fail')
+}
+
+const onDeleteAllSuccess = function () {
+  console.log('delete from all q modal success')
+}
+const onDeleteAllFail = function () {
+  console.log('delete from all q modal fail')
+}
+
+const onClearAllQContent = function (event) {
+  event.preventDefault()
+  $('.all-questions-content').html('')
 }
 
 module.exports = {
@@ -112,5 +135,10 @@ module.exports = {
   onDeleteAndEditFail,
   onEditSuccess,
   onThanksSuccess,
-  onIndexQuestionsSuccess
+  onIndexQuestionsSuccess,
+  onEditAllSuccess,
+  onEditAllFail,
+  onDeleteAllSuccess,
+  onDeleteAllFail,
+  onClearAllQContent
 }

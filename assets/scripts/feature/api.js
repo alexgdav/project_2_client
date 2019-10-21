@@ -13,19 +13,9 @@ const createQuestion = function (formData) {
   })
 }
 
-const getAllQuestions = function () { // currently not using this one
-  return $.ajax({
-    url: config.apiUrl + '/questions',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    method: 'GET'
-  })
-}
-
 const deleteQuestion = function (formData) {
   return $.ajax({
-    url: config.apiUrl + '/questions/' + formData.question.id,
+    url: config.apiUrl + '/questions/' + formData, // .question.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
@@ -68,7 +58,6 @@ module.exports = {
   createQuestion,
   deleteQuestion,
   editQuestion,
-  getAllQuestions,
   getOneQuestion,
   indexQuestions
 }
