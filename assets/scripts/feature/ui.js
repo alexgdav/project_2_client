@@ -17,6 +17,8 @@ const oracleArray = ['Dom Pierre Pérignon was a Benedictine monk who perfected 
   'The chances of finding out what’s really going on in the universe are so remote, the only thing to do is hang the sense of it and keep yourself occupied.',
   'Okay, that\'s too many words, too many words coming at me all at once.',
   '42.',
+  'I happen to be a more caring Oracle than most.',
+  'Sometimes I think that he means to trick me into embarrassing myself.',
   'Space is big. Really big. You just won’t believe how vastly, hugely, mindbogglingly big it is.',
   'People considered the Bagginses very respectable, not only because most of them were rich, but also because they never had any adventures or did anything unexpected. This isn\'t a metaphor; I just thought you might do with a good quote.',
   'Entropy is coming for us all.',
@@ -48,7 +50,7 @@ const onAskSuccess = function (resData) {
   $('#oracle_question_body').show().text(currentQuestion)
   $('#oracle_response_body').show().text(oracleAnswer)
   $('#oracle_edit_body').show()
-  $('#oracle_additional_body').text('Wondering why you even asked question #' + currentQuestionId + '? Un-ask below.')
+  $('#oracle_additional_body').text('Wondering why you even asked question #' + currentQuestionId + '? Yeah, me, too.')
   $('#q_edit_id').attr('value', currentQuestionId)
   $('#q_delete_id').attr('value', currentQuestionId)
   $('#question_form').hide(3500)
@@ -65,6 +67,7 @@ const onAskAndIndexFail = function () {
 }
 
 const onIndexQuestionsSuccess = function (response) {
+  // console.log(response)
   const howManyQuestions = response.questions.length
   $('#allQuestionsModal').modal('show')
   $('.all-questions-count').text('You have asked ' + howManyQuestions + ' questions. Uh, great job!')
@@ -97,7 +100,6 @@ const onEditSuccess = function (resData) {
   $('#oracle_response_body').show().text('You expected a new response? Hah. Good one!')
   $('#oracle_additional_body').text('You could try editing again, I guess. Hey, it\'s your time.')
   $('form').trigger('reset')
-//  $('#q_edit_phrase').attr('placeholder', 'Changed Wording Here')
 }
 
 const onThanksSuccess = function () {
@@ -129,7 +131,7 @@ const onClearAllQContent = function (event) {
 const onShowSuccess = function (responseData) {
   $('form').trigger('reset')
   $('.all-questions-content').html('')
-  $('.all-questions-content').text('Question ' + responseData.question.id + ' was ' + responseData.question.phrase + '. What a GREAT question.')
+  $('.all-questions-content').text('Question ' + responseData.question.id + ' was: \'' + responseData.question.phrase + '\'. Undoubtedly, a great question.')
 }
 
 const onShowFail = function () {

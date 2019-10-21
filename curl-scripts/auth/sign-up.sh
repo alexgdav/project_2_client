@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # curl "https://young-reef-92206.herokuapp.com/sign-up" \
-curl "http://localhost:4741/sign-up"
+curl "http://localhost:4741/sign-up" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

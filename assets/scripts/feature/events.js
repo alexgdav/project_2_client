@@ -2,6 +2,7 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
+// standard onAsk function, triggered whenever a new question is asked
 const onAsk = event => {
   event.preventDefault()
   const formData = getFormFields(event.target)
@@ -10,21 +11,24 @@ const onAsk = event => {
     .catch(ui.onAskAndIndexFail)
 }
 
+// onUnask triggered from the new question asked modal
 const onUnask = event => {
   event.preventDefault()
   const fullFormData = getFormFields(event.target)
-  console.log('full form Data is', fullFormData)
+  // console.log('full form Data is', fullFormData)
   const formData = fullFormData.question.id
-  console.log('form Data is', formData)
+  // console.log('form Data is', formData)
   api.deleteQuestion(formData)
     .then(ui.onDeleteSuccess)
     .catch(ui.onDeleteAndEditFail)
 }
 
+// onEdit triggered from the new question asked modal
+
 const onEdit = event => {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  console.log(formData)
+  // console.log(formData)
   api.editQuestion(formData)
     .then(ui.onEditSuccess)
     .catch(ui.onDeleteAndEditFail)
@@ -41,7 +45,7 @@ const onShow = event => {
   event.preventDefault()
   const fullFormData = getFormFields(event.target)
   const formData = fullFormData.question.id
-  console.log('formData is', formData)
+  // console.log('formData is', formData)
   api.showQuestion(formData)
     .then(ui.onShowSuccess)
     .catch(ui.onShowFail)
@@ -50,12 +54,12 @@ const onShow = event => {
 const onEditAll = event => {
   event.preventDefault()
   const id = $(event.target).data('id')
-  console.log('id is', id)
+  // console.log('id is', id)
   const formData = getFormFields(event.target)
-  console.log('before', formData)
+  // console.log('before', formData)
   formData.question.id = id
-  console.log(formData.question.id)
-  console.log('after', formData)
+  // console.log(formData.question.id)
+  // console.log('after', formData)
   api.editQuestion(formData)
     .then(function () {
       onIndex(event)
@@ -67,7 +71,7 @@ const onEditAll = event => {
 const onUnaskAll = event => {
   event.preventDefault()
   const id = $(event.target).data('id')
-  console.log('id is', id)
+  //  console.log('id is', id)
   api.deleteQuestion(id)
     .then(function () {
       onIndex(event)

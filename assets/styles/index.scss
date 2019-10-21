@@ -1,6 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Acme|Lato&display=swap');
 
+$success-color: #fff;
+$fail-color: #ff4444;
+$header-auth-msg-font: 'Acme', sans-serif;
+$basic-font: 'Lato', sans-serif;
+
+
 body,
 html {
   height: 95%;
@@ -10,19 +16,20 @@ html {
 h1,
 h3,
 h5 {
-  font-family: 'Acme', sans-serif;
+  font-family: $header-auth-msg-font;
   padding: 5px;
 }
 
 li,
 p {
-  font-family: 'Lato', sans-serif;
+  font-family: $basic-font;
 }
 
 .all-questions-count {
   padding: 10px;
-  font-family: 'Lato', sans-serif;
+  font-family: $basic-font;
 }
+
 .centered-form,
 .featureEvs_messages,
 .heading {
@@ -39,20 +46,19 @@ p {
 }
 
 .failure {
-  color: #C383AD;
-  font-family: 'Acme', sans-serif;
+  color: $fail-color;
+  font-family: $header-auth-msg-font;
   font-weight: bold;
 }
 
 .featureEvs_messages {
   display: none;
-  font-family: 'Acme', sans-serif;
-//  color: white;
+  font-family: $header-auth-msg-font;
 }
 
 .success {
-  color: #FFFFFF;
-  font-family: 'Acme', sans-serif;
+  color: $success-color;
+  font-family: $header-auth-msg-font;
   font-weight: bold;
 }
 
@@ -74,10 +80,11 @@ p {
 
 #footer {
   flex-shrink: none;
+  font-family: $basic-font;
 }
 
 #oracle_question_body,
 #oracle_response_body {
   padding: 10px;
-  font-family: 'Lato', sans-serif;
+  font-family: $basic-font;
 }

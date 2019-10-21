@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>the (judgmental) oracle will see you now</title>
+  <title>The Oracle Is Listening!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Do not add `link` tags-->
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <div class="collapse" id="navbarToggleExternalContent">
+  <div class="collapse" id="navbar-toggle">
     <div class="bg-dark p-4">
       <div class="logged-out">
         <h5 class="text-white h4">Sign In, or Sign Up to be in the Oracle's Presence</h5>
@@ -51,13 +51,15 @@
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-toggle" aria-controls="navbar-toggle" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   </nav>
   <div class="holder">
     <div class="main">
-      <div class="heading"><h1>Ask the Oracle (if You Must, I Guess).</h1></div>
+      <div class="heading">
+        <h1>Ask the Oracle (if You Must).</h1>
+      </div>
       <hr>
       <hr>
       <hr>
@@ -107,8 +109,8 @@
         </form>
 
 
-<!-- All Questions Modal -->
-      <div class="modal fade" id="allQuestionsModal" tabindex="-1" role="dialog" aria-labelledby="all-questions-modal-title" aria-hidden="true">
+        <!-- All Questions Modal -->
+        <div class="modal fade" id="allQuestionsModal" tabindex="-1" role="dialog" aria-labelledby="all-questions-modal-title" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -122,19 +124,20 @@
                 <hr>
                 <div class="all-questions-options">
                   <p>
-                <button type="button" class="btn btn-outline-danger w-100" id="clear-all-questions-content">Clear Questions Display</button>
-               </p>
-               <p>
-                 <button type="button" class="btn btn-outline-danger w-100" id="reload-all-questions-content">Reload All Questions</button>
-              </p>
-              <p> <form class="form-inline w-100" id="question_show">
-                  <input class="form-control w-100" required type="number" name="question[id]" id="id_input" placeholder="You remembered a question ID? Good for you.">
-                  <button class="btn btn-outline-danger w-100" type="submit">Retrieve A Past Question</button>
-                </form>
-              </p>
-              <hr>
-              <hr>
-               </div>
+                    <button type="button" class="btn btn-outline-danger w-100" id="clear-all-questions-content">Clear Questions Display</button>
+                  </p>
+                  <p>
+                    <button type="button" class="btn btn-outline-danger w-100" id="reload-all-questions-content">Reload All Questions</button>
+                  </p>
+                  <p>
+                    <form class="form-inline w-100" id="question_show">
+                      <input class="form-control w-100" required type="number" name="question[id]" id="id_input" placeholder="You remembered a question ID? Good for you.">
+                      <button class="btn btn-outline-danger w-100" type="submit">Retrieve A Past Question</button>
+                    </form>
+                  </p>
+                  <hr>
+                  <hr>
+                </div>
                 <div class="all-questions-content"></div>
               </div>
               <div class="modal-footer">
@@ -175,7 +178,7 @@
               <div id="oracle_edit_body">
                 <form class="form-inline w-100" id="q_edit">
                   <input class="form-control w-100" type="hidden" name="question[id]" value="" id="q_edit_id">
-                  <input class="form-control w-100" required type="text" name="question[phrase]" id="q_edit_phrase" placeholder="Changed Wording Here">
+                  <input class="form-control w-100" required type="text" name="question[phrase]" id="q_edit_phrase" placeholder="Put new phrase here. Obviously.">
                   <button class="btn btn-dark w-100" type="submit">Edit Question</button>
                 </form>
                 <hr>
