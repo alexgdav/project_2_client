@@ -70,8 +70,9 @@ on the local server and Heroku
 * add forms for authentication, and connect API requests to them
 * connect user authorization to CRUD events on Questions / implement Protected Controller on back-end
 * add feedback messages for each action's success and failure (console log only)
-* create the additional API requests ()
+* create additional API requests (POST, DESTROY) for Questions
 * implement Bootstrap for all data displays, move feedback messages to header and modals
+* create the remaining API requests (GET, PATCH)
 * implement Handlebars to render API GET requests in Bootstrap modals
 * de-bug Handlebars, partially re-factor redundant GET/UPDATE/DELETE code
 * add remaining styling
@@ -92,6 +93,6 @@ the error, and understanding the error is still not enough to solve it, explaini
 
 ### Acknowledgments
 
-* Everyone in GA SEI-05: a million, zillion thanks!
-* An additional thanks to the GA instructors for the individual support, and the issue queue!
+* Everyone in GA SEI 05: a million thanks!
+* An additional thanks to the GA instructors for the individual support, and the issue queue
 * The background image used is (c) National Geographic
