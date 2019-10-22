@@ -23,12 +23,12 @@ p {
 }
 
 .all-questions-count {
-  padding: 10px;
   font-family: $basic-font;
+  padding: 10px;
 }
 
 .centered-form,
-.featureEvs_messages,
+.feature-evs-messages,
 .heading {
   margin: 0 auto;
   padding: 10px;
@@ -48,7 +48,7 @@ p {
   font-weight: bold;
 }
 
-.featureEvs_messages {
+.feature-evs-messages {
   display: none;
   font-family: $header-auth-msg-font;
 }
@@ -85,6 +85,6 @@ p {
 
 #oracle_question_body,
 #oracle_response_body {
-  padding: 10px;
   font-family: $basic-font;
+  padding: 10px;
 }

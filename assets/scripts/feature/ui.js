@@ -45,7 +45,7 @@ const oracleAnswer = function () {
 const onAskSuccess = function (resData) {
   const currentQuestion = resData.question.phrase
   const currentQuestionId = resData.question.id
-  $('.featureEvs_messages').hide()
+  $('.feature-evs-messages').hide()
   $('.modal_header').show()
   $('#oracle_question_body').show().text(currentQuestion)
   $('#oracle_response_body').show().text(oracleAnswer)
@@ -63,7 +63,7 @@ const successText = 'Oh, nicely done. Should I clap?'
 const failText = 'Well, that didn\'t work at all. Maybe give it another shot, champ.'
 
 const onAskAndIndexFail = function () {
-  $('.featureEvs_messages').show().text(failText)
+  $('.feature-evs-messages').show().text(failText)
   $('form').trigger('reset')
 }
 
