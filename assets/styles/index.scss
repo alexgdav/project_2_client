@@ -1,17 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Acme|Lato&display=swap');
-
 $success-color: #fff;
 $fail-color: #ff4444;
 $header-auth-msg-font: 'Acme', sans-serif;
 $basic-font: 'Lato', sans-serif;
 
-
 body,
 html {
   height: 95%;
 }
-
 
 h1,
 h3,
@@ -33,10 +30,10 @@ p {
 .centered-form,
 .featureEvs_messages,
 .heading {
-   margin: 0 auto;
-   width: 70%;
-   padding: 10px;
+  margin: 0 auto;
+  padding: 10px;
   text-align: center;
+  width: 70%;
 }
 
 .holder {
@@ -67,7 +64,7 @@ p {
 }
 
 .main {
-  background: linear-gradient(rgba(250, 250, 250, .8), rgba(145, 152, 229, .5), rgba(250, 250, 250, .8));
+  background: linear-gradient(rgba(250, 250, 250, .8), rgba(145, 152, 229, .5), rgba(250, 250, 250, .9));
   background-size: cover;
   height: 100%;
   text-align: center;
@@ -76,7 +73,6 @@ p {
 .modal-body {
   text-align: left;
 }
-
 
 #footer {
   flex-shrink: none;

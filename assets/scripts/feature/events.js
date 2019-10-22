@@ -24,7 +24,6 @@ const onUnask = event => {
 }
 
 // onEdit triggered from the new question asked modal
-
 const onEdit = event => {
   event.preventDefault()
   const formData = getFormFields(event.target)

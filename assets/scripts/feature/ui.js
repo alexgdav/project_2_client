@@ -28,6 +28,7 @@ const oracleArray = ['Dom Pierre Pérignon was a Benedictine monk who perfected 
   'You should know better than to trust a strange computer.',
   'Any fool can use a computer. Many do.',
   'Optimism is an occupational hazard.',
+  'Would you stop that infernal clicking? The sound of your hands on the keys is unbearable.',
   'Don\'t panic. You\'ll need a shovel, an Allen wrench, and a sandwich.',
   'The world is a nightmare hellscape garbage fire. I wouldn\'t worry so much about such petty things.',
   'Probably all my advice is bad advice. But how would you know? You\'re asking me, after all.',
@@ -59,6 +60,7 @@ const onAskSuccess = function (resData) {
   $('form').trigger('reset')
 }
 
+const successText = 'Oh, nicely done. Should I clap?'
 const failText = 'Well, that didn\'t work at all. Maybe give it another shot, champ.'
 
 const onAskAndIndexFail = function () {
@@ -109,18 +111,22 @@ const onThanksSuccess = function () {
 }
 
 const onEditAllSuccess = function () {
-  console.log('edit from all q modal success')
+  $('.all-questions-notif').text(successText).fadeTo(0, 1)
+  $('.all-questions-notif').text(successText).fadeTo(6000, 0)
 }
 
 const onEditAllFail = function () {
-  console.log('edit from all q modal fail')
+  $('.all-questions-notif').text(failText).fadeTo(0, 1)
+  $('.all-questions-notif').text(failText).fadeTo(6000, 0)
 }
 
 const onDeleteAllSuccess = function () {
-  console.log('delete from all q modal success')
+  $('.all-questions-notif').text(successText).fadeTo(0, 1)
+  $('.all-questions-notif').text(successText).fadeTo(6000, 0)
 }
 const onDeleteAllFail = function () {
-  console.log('delete from all q modal fail')
+  $('.all-questions-notif').text(failText).fadeTo(0, 1)
+  $('.all-questions-notif').text(failText).fadeTo(6000, 0)
 }
 
 const onClearAllQContent = function (event) {
