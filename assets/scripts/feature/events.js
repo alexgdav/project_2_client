@@ -15,9 +15,7 @@ const onAsk = event => {
 const onUnask = event => {
   event.preventDefault()
   const fullFormData = getFormFields(event.target)
-  // console.log('full form Data is', fullFormData)
   const formData = fullFormData.question.id
-  // console.log('form Data is', formData)
   api.deleteQuestion(formData)
     .then(ui.onDeleteSuccess)
     .catch(ui.onDeleteAndEditFail)
@@ -27,12 +25,12 @@ const onUnask = event => {
 const onEdit = event => {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  // console.log(formData)
   api.editQuestion(formData)
     .then(ui.onEditSuccess)
     .catch(ui.onDeleteAndEditFail)
 }
 
+// onIndex is triggered from the all questions display modal
 const onIndex = event => {
   event.preventDefault()
   api.indexQuestions()
@@ -40,25 +38,22 @@ const onIndex = event => {
     .catch(ui.onAskAndIndexFail)
 }
 
+// onShow is triggered from the all questions display modal
 const onShow = event => {
   event.preventDefault()
   const fullFormData = getFormFields(event.target)
   const formData = fullFormData.question.id
-  // console.log('formData is', formData)
   api.showQuestion(formData)
     .then(ui.onShowSuccess)
     .catch(ui.onShowFail)
 }
 
+// the Edit for questions displayed in the all questions display modal
 const onEditAll = event => {
   event.preventDefault()
   const id = $(event.target).data('id')
-  // console.log('id is', id)
   const formData = getFormFields(event.target)
-  // console.log('before', formData)
   formData.question.id = id
-  // console.log(formData.question.id)
-  // console.log('after', formData)
   api.editQuestion(formData)
     .then(function () {
       onIndex(event)
@@ -67,10 +62,10 @@ const onEditAll = event => {
     .catch(ui.onEditAllFail)
 }
 
+// the delete triggered from the all questions display modal
 const onUnaskAll = event => {
   event.preventDefault()
   const id = $(event.target).data('id')
-  //  console.log('id is', id)
   api.deleteQuestion(id)
     .then(function () {
       onIndex(event)

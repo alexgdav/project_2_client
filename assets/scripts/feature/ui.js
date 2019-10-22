@@ -1,4 +1,3 @@
-/* const store = require('../store.js') */
 
 const indexQuestionsTemplate = require('../templates/question-index.handlebars')
 
@@ -69,7 +68,6 @@ const onAskAndIndexFail = function () {
 }
 
 const onIndexQuestionsSuccess = function (response) {
-  // console.log(response)
   const howManyQuestions = response.questions.length
   $('#allQuestionsModal').modal('show')
   $('.all-questions-count').text('You have asked ' + howManyQuestions + ' questions. Uh, great job!')
