@@ -17,7 +17,7 @@ const oracleArray = ['Dom Pierre Pérignon was a Benedictine monk who perfected 
   'Okay, that\'s too many words, too many words coming at me all at once.',
   '42.',
   'I happen to be a more caring Oracle than most.',
-  'Sometimes I think that he means to trick me into embarrassing myself.',
+  'Sometimes I think that you mean to trick me into embarrassing myself.',
   'Space is big. Really big. You just won’t believe how vastly, hugely, mindbogglingly big it is.',
   'People considered the Bagginses very respectable, not only because most of them were rich, but also because they never had any adventures or did anything unexpected. This isn\'t a metaphor; I just thought you might do with a good quote.',
   'Entropy is coming for us all.',
