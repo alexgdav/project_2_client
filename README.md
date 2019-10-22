@@ -1,4 +1,4 @@
-# The Oracle: a (Recalcitrant) Sage to Answer Your Burning Questions
+## The Oracle: a (Recalcitrant) Sage to Answer Your Burning Questions
 ### A Single Page Full-Stack Application Project (Front End Client)
 
 Remember the Magic Eight Ball? Think of a question, shake it, and get an answer?
@@ -17,12 +17,12 @@ Assembly's Software Engineering Immersive project)
 
 ## Important Links
 
-[Check out The Oracle here](https://alexgdav.github.io/project_2_client/)
-[The back-end repo](https://github.com/alexgdav/project_2_api)
-[The deployed back-end](https://young-reef-92206.herokuapp.com/)
-[User Stories](http://#)
-[Wireframes](http://#)
-[ERDs](http://#)
+* [Check out The Oracle here](https://alexgdav.github.io/project_2_client/)
+* [The back-end repo](https://github.com/alexgdav/project_2_api)
+* [The deployed back-end](https://young-reef-92206.herokuapp.com/)
+* [User Stories](https://github.com/alexgdav/project_2_client/blob/master/user_stories.jpg)
+* [Wireframes](https://github.com/alexgdav/project_2_client/blob/master/wireframe.jpg)
+* [ERDs](https://github.com/alexgdav/project_2_api/blob/master/erd.jpg)
 
 
 ## Built With
@@ -41,7 +41,7 @@ Assembly's Software Engineering Immersive project)
 
 ## Planning, Development, and Problem-Solving Process
 
-#### Planning & Problem Solving
+#### Planning
 In developing this application, I found that a strict division between working
 on back-end and front-end functionality was best for my process.
 
@@ -59,9 +59,6 @@ Having had planned the holistic user experience would have enabled me to have a
 more streamlined schedule. As a result, my next set of user stories will cover the
 entire user experience.
 
-My approach to problem-solving relies heavily on the use of console logs. If logging
-the error, and understanding the error is still not enough to solve it, I found
-that explaining it to someone else usually helped.
 
 #### Development Steps
 * create Questions table via Ruby on Rails
@@ -81,8 +78,19 @@ on the local server and Heroku
 * deploy front-end client, solicit user feedback
 * implement feedback and additional debug
 
+### Problem Solving
+My approach to problem-solving relies heavily on the use of console logs. If logging
+the error, and understanding the error is still not enough to solve it, explaining it to someone else usually helped. I did not utilize the issue queue as much as I could have, and the time I spent working through issues could have been spent on achieving stretch goals, instead.
 
-## Acknowledgments
+## Unsolved Problems and Future Plans
+
+* On the back-end, I would like to add another resource and a join table to the database. The resource would be the oracle's responses, and the join table would connect responses with questions for a many to many relationship. The possible options for the responses are to still generate from an array and be saved into the table when the answer is rendered, or for the table to be prefilled, and for the answers to be sourced from it.
+* On the front-end, My current code, especially the PATCH and DESTROY requests from the two question display modals, is not DRY. I would like to refactor it further.
+* Also on the front-end, my class and ID names are not uniform in syntax. I would like to rename them accordingly.
+
+
+
+### Acknowledgments
 
 * Everyone in GA SEI-05: a million, zillion thanks!
 * An additional thanks to the GA instructors for the individual support, and the issue queue!
