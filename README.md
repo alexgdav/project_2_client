@@ -28,7 +28,7 @@ Assembly's Software Engineering Immersive project)
 ## Built With
 
 * JavaScript & jQuery
-* PostgresSQL
+* PostgreSQL
 * Ruby on Rails
 * AJAX
 * Bootstrap
