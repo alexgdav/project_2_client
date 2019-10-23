@@ -9,6 +9,10 @@ This particular Oracle has had enough quite enough of that, thank you. It's hear
 too many questions, given too many answers, and all the answers it has left are
 irreverent, irrelevant, and, most importantly, sassy.
 
+Create a question to receive an answer from the Oracle. You may edit any of your
+questions, delete them, retrieve the full list of questions you have asked, or
+review your past questions one by one.
+
 Don't expect the meaning of life, the universe, and everything, but you might
 walk away with a laugh. And don't forget to say, "uhh, thanks, I think"!
 
