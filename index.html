@@ -14,6 +14,62 @@
 </head>
 
 <body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="col-6">
+   <h2 class="title">Ask the Oracle (if You Must)</h2>
+ </div>
+ <div class="col-6">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown logged-out">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sign Up
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <form class="form" id="sign-up">
+            <input type="email" name="credentials[email]" placeholder="enter email" />
+            <input type="password" name="credentials[password]" placeholder="enter new password" />
+            <input type="password" name="credentials[password_confirmation]" placeholder="confirm password" />
+            <button class="btn btn-dark">sign up</button>
+          </form>
+        </div>
+      </li>
+      <li class="nav-item dropdown logged-out">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Sign In
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <form class="form" id="sign-in">
+            <input type="email" name="credentials[email]" placeholder="enter email" />
+            <input type="password" name="credentials[password]" placeholder="enter password" />
+            <button class="btn btn-dark">sign in</button>
+          </form>
+        </div>
+      </li>
+      <li class="nav-item dropdown logged-in">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Change Password
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <form class="form" id="change-pw">
+            <input type="password" name="passwords[old]" placeholder="enter current password" /><br>
+            <input type="password" name="passwords[new]" placeholder="enter new password" /><br>
+            <button class="btn btn-secondary">change password</button><br>
+          </form>
+        </div>
+      </li>
+      <li class="nav-item logged-in">
+        <form class="form" id="sign-out">
+          <button class="btn btn-light">Sign Out</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<!---
   <div class="collapse" id="navbar-toggle">
     <div class="bg-dark p-4">
       <div class="logged-out">
@@ -54,19 +110,16 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-toggle" aria-controls="navbar-toggle" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  </nav>
+  </nav> -->
   <div class="holder">
     <div class="main">
-      <div class="heading">
-        <h1>Ask the Oracle (if You Must)</h1>
-      </div>
-      <hr>
-      <hr>
-      <hr>
-      <div class="logged-out">
+    <!--    <div class="heading">
+      <h1>Ask the Oracle (if You Must)</h1>
+      </div> -->
+      <div class="logged-out cya-holder">
         <!--cya modal-->
-        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#cya">
-          What's The Oracle? What do I do? What does this all mean?
+        <button type="button" class="btn btn-dark cya-modal-toggle" data-toggle="modal" data-target="#cya">
+          What do I do? What's the Oracle?
         </button>
         <div class="modal fade" id="cya" tabindex="-1" role="dialog" aria-labelledby="cya_modal" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -199,7 +252,7 @@
         </div>
       </div>
       <div class="logged-in w-100">
-        <h3 class=feature-evs-messages></h3>
+        <h3 class="feature-evs-messages"></h3>
       </div>
     </div>
   </div>

@@ -11,6 +11,7 @@ html {
 }
 
 h1,
+h2,
 h3,
 h5 {
   font-family: $header-auth-msg-font;
@@ -28,13 +29,26 @@ p {
 }
 
 .centered-form,
-.feature-evs-messages,
-.heading {
+.feature-evs-messages {
   margin: 0 auto;
   padding: 10px;
   text-align: center;
   width: 70%;
 }
+
+.cya-holder {
+ height: 90%;
+}
+
+.cya-modal-toggle {
+  margin-top: 10em;
+}
+
+.dropdown-menu {
+  background: transparentize($success-color, 0.2);
+  padding: 10px;
+}
+
 
 .holder {
   background: url('public/stars.jpg');
@@ -76,6 +90,11 @@ p {
 
 .small {
   text-align: justify;
+}
+
+.title {
+  color: $success-color;
+  padding-right: 10px;
 }
 
 #footer {
