@@ -1,18 +1,22 @@
 const store = require('../store.js')
 
 const successMessage = function (successText) {
-  $('#authEvs_messages').text(successText).fadeTo(0, 1)
-  $('#authEvs_messages').text(successText).fadeTo(7000, 0)
-  $('#authEvs_messages').removeClass('failure')
-  $('#authEvs_messages').addClass('success')
+//  $('.authEvs_messages').text(successText).fadeTo(0, 1)
+//  $('.authEvs_messages').text(successText).fadeTo(7000, 0)
+  $('.auth-evs-messages').text(successText).fadeTo(0, 1)
+  $('.auth-evs-messages').text(successText).fadeTo(7000, 0)
+//  $('#authEvs_messages').removeClass('failure')
+//  $('#authEvs_messages').addClass('success')
   $('form').trigger('reset')
 }
 
 const failMessage = function (failText) {
-  $('#authEvs_messages').text(failText).fadeTo(0, 1)
-  $('#authEvs_messages').text(failText).fadeTo(7000, 0)
-  $('#authEvs_messages').removeClass('success')
-  $('#authEvs_messages').addClass('failure')
+  $('.auth-evs-messages').text(failText).fadeTo(0, 1)
+  $('.auth-evs-messages').text(failText).fadeTo(7000, 0)
+//  $('.authEvs_messages').text(failText).fadeTo(0, 1)
+//  $('.authEvs_messages').text(failText).fadeTo(7000, 0)
+//  $('#authEvs_messages').removeClass('success')
+//  $('#authEvs_messages').addClass('failure')
   $('form').trigger('reset')
 }
 
@@ -20,7 +24,7 @@ const onSignInSuccess = function (resData) {
   store.user = resData.user
   $('.logged-out').hide()
   $('.logged-in').show()
-  successMessage('The Oracle sees you, ' + store.user.email + '. Actually, I just see your credentials, but to-MAY-to, to-MAH-to.')
+  successMessage(store.user.email + 'is signed in')
 }
 
 const onSignOutSuccess = function () {

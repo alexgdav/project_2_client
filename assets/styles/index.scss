@@ -28,6 +28,11 @@ p {
   padding: 10px;
 }
 
+.auth-evs-messages {
+  font-family: $basic-font;
+  color: $success-color;
+}
+
 .centered-form,
 .feature-evs-messages {
   margin: 0 auto;
@@ -37,7 +42,7 @@ p {
 }
 
 .cya-holder {
- height: 90%;
+  height: 90%;
 }
 
 .cya-modal-toggle {
@@ -49,9 +54,8 @@ p {
   padding: 10px;
 }
 
-
 .holder {
-  background: url('public/stars.jpg');
+  background: url("public/stars.jpg");
   background-size: cover;
   height: 100%;
 }
@@ -86,6 +90,13 @@ p {
 
 .modal-body {
   text-align: left;
+}
+
+.oracle-content-holder {
+  margin-top: 0 auto;
+  padding: 30px;
+  text-align: center;
+  width: 70%;
 }
 
 .small {
