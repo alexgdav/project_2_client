@@ -1,7 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Acme|Lato&display=swap');
 $success-color: #fff;
-$fail-color: #f44;
 $header-auth-msg-font: 'Acme', sans-serif;
 $basic-font: 'Lato', sans-serif;
 
@@ -19,7 +18,8 @@ h5 {
 }
 
 li,
-p {
+p,
+.small {
   font-family: $basic-font;
 }
 
@@ -28,8 +28,12 @@ p {
   padding: 10px;
 }
 
+.auth-evs-message-holder {
+  height: 4em;
+}
+
 .auth-evs-messages {
-  font-family: $basic-font;
+  font-family: $header-auth-msg-font;
   color: $success-color;
 }
 
@@ -38,7 +42,6 @@ p {
   margin: 0 auto;
   padding: 10px;
   text-align: center;
-  width: 70%;
 }
 
 .cya-holder {
@@ -46,7 +49,11 @@ p {
 }
 
 .cya-modal-toggle {
-  margin-top: 10em;
+  margin-top: 7em;
+}
+
+.cya-text-item {
+  padding: 0.4em;
 }
 
 .dropdown-menu {
@@ -60,21 +67,9 @@ p {
   height: 100%;
 }
 
-.failure {
-  color: $fail-color;
-  font-family: $header-auth-msg-font;
-  font-weight: bold;
-}
-
 .feature-evs-messages {
   display: none;
   font-family: $header-auth-msg-font;
-}
-
-.success {
-  color: $success-color;
-  font-family: $header-auth-msg-font;
-  font-weight: bold;
 }
 
 .logged-in {
@@ -93,14 +88,18 @@ p {
 }
 
 .oracle-content-holder {
-  margin-top: 0 auto;
-  padding: 30px;
+  margin: 0 auto;
+  padding-top: 6em;
   text-align: center;
-  width: 70%;
 }
 
 .small {
   text-align: justify;
+}
+
+.test {
+  border: 1px white solid;
+  height: 4em;
 }
 
 .title {

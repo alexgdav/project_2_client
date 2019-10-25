@@ -17,12 +17,9 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="col-4">
    <h2 class="title">Ask the Oracle (if You Must)</h2>
- </div>
- <div class="col-4">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown logged-out">
+    <ul class="navbar-nav mr-auto logged-out">
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sign Up
         </a>
@@ -35,7 +32,7 @@
           </form>
         </div>
       </li>
-      <li class="nav-item dropdown logged-out">
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Sign In
         </a>
@@ -47,8 +44,10 @@
           </form>
         </div>
       </li>
-      <li class="nav-item dropdown logged-in">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </ul>
+
+      <ul class="navbar-nav mr-auto logged-in">
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Change Password
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -59,64 +58,18 @@
           </form>
         </div>
       </li>
-      <li class="nav-item logged-in">
-        <form class="form" id="sign-out">
+       </ul>
+        <form class="form-inline logged-in" id="sign-out">
           <button class="btn btn-light">Sign Out</button>
         </form>
-      </li>
-    </ul>
-  </div>
-  <div class="col-4 auth-evs-messages"></div>
 </nav>
 
-
-<!---
-  <div class="collapse" id="navbar-toggle">
-    <div class="bg-dark p-4">
-      <div class="logged-out">
-        <h5 class="text-white h4">Sign In, or Sign Up to be in the Oracle's Presence</h5>
-        <form class="form-inline" id="sign-up">
-          <input type="email" name="credentials[email]" placeholder="enter email" />
-          <input type="password" name="credentials[password]" placeholder="enter new password" />
-          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password" />
-          <button class="btn btn-dark">sign up</button>
-        </form>
-        <form class="form-inline" id="sign-in">
-          <input type="email" name="credentials[email]" placeholder="enter email" />
-          <input type="password" name="credentials[password]" placeholder="enter password" />
-          <button class="btn btn-dark">sign in</button>
-        </form>
-      </div>
-      <div class="logged-in">
-        <h5 class="text-white h4">Change Password, or Leave the Oracle's Presence</h5>
-        <div>
-          <form class="form-inline" id="change-pw">
-            <input type="password" name="passwords[old]" placeholder="enter current password" /><br>
-            <input type="password" name="passwords[new]" placeholder="enter new password" /><br>
-            <button class="btn btn-dark">change password</button><br>
-          </form>
-        </div>
-        <hr>
-        <div>
-          <form class="form" id="sign-out">
-            <button class="btn btn-danger">sign out</button>
-          </form>
-        </div>
-        <hr>
-      </div>
-      <div id='authEvs_messages'></div>
-    </div>
-  </div>
-  <nav class="navbar navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-toggle" aria-controls="navbar-toggle" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </nav> -->
   <div class="holder">
     <div class="main">
-    <!--    <div class="heading">
-      <h1>Ask the Oracle (if You Must)</h1>
-      </div> -->
+
+      <div class="w-100 auth-evs-message-holder">
+        <h3 class="auth-evs-messages"></h3>
+      </div>
       <div class="logged-out cya-holder">
         <!--cya modal-->
         <button type="button" class="btn btn-dark cya-modal-toggle" data-toggle="modal" data-target="#cya">
@@ -131,19 +84,17 @@
               </div>
               <div class="modal-body">
                 <ul>
-                  <li>Do you have many questions? Too many questions? Always with the questions?</li>
-                  <li>Are you tired of hearing "I don't know"? "I can't see the future"? "Stop asking me"? "Please, leave"?</li>
-                  <li>Do you have only one question, but it's a really, truly, massively super important one?</li>
-                  <li>(Spoiler: they're always oh, so super important)</li>
-                  <li>It just so happens that the Oracle will always listen. Always. No matter just how many questions you ask.</li>
-                  <li>So, go ahead. Register. Log in. Ask your questions, and receive the clarity and judgment of the Oracle's wisdom.</li>
+                  <li class="cya-text-item">Do you have many questions? Too many questions? Always with the questions?</li>
+                  <li class="cya-text-item">Are you tired of hearing "I don't know"? "I can't see the future"? "Stop asking me"? "Please, leave"?</li>
+                  <li class="cya-text-item">Do you have only one question, but it's a really, truly, massively important one?</li>
+                  <li class="cya-text-item">You're in luck: the Oracle will always listen. No matter just how many questions you ask.</li>
+                  <li class="cya-text-item">So, go ahead! Register. Log in. Ask your questions, and receive the clarity and judgment of the Oracle's wisdom.</li>
                 </ul>
-                <hr>
-                <p class="small">Please note: clarity and judgment are subjective values. While most users feel judged when
+              <hr>
+                <div class="small">Please note: clarity and judgment are subjective values. While most users feel judged when
                   querying the Oracle, your experience may vary. No guarantees are provided. Wisdom is relative.
                   Responses are for entertainment purposes only. The Oracle is not responsible for any actions taken by the user
-                  after a response has been provided.</p>
-
+                after a response has been given.</div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">I understand</button>
@@ -152,7 +103,7 @@
           </div>
         </div>
       </div>
-<div class="w-100 oracle-content-holder">
+<div class="w-75 oracle-content-holder">
       <div class="logged-in" id="question_form">
         <form class="form-inline centered-form" id="question_create">
           <input class="form-control w-100" required type="text" name="question[phrase]" id="q_input" placeholder="Oracle, I have a question!">
